@@ -1,33 +1,27 @@
 /**
- * UppercaseProcessor - Transforms output to uppercase
+ * LowercaseProcessor - Transforms output to lowercase
  *
  * @author    Jonathan Roewen
  */
-#ifndef UPPERCASE_PROCESSOR_H
-#define UPPERCASE_PROCESSOR_H
+#ifndef LOWERCASE_PROCESSOR_H
+#define LOWERCASE_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Kernel.h"
-#include "Utils.h"
 
-#include <string>
-
-using namespace std;
-
-class UppercaseProcessor : public AimlProcessor
+class LowercaseProcessor : public AimlProcessor
 {
 public:
-    ~UppercaseProcessor() { }
+    ~LowercaseProcessor() { }
     
     string getName() const {
-        return "uppercase";
+        return "lowercase";
     }
     string getVersion() const {
         return "1.0";
     }
     string process(Match *m, PElement e, Responder *r, const string &id) {
         string result = Kernel::process(m, e, r, id);
-        return toUpper(result);
+        return toLower(result);
     }
 };
 

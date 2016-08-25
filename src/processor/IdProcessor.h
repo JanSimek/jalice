@@ -7,11 +7,6 @@
 #define ID_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Kernel.h"
-
-#include <string>
-
-using namespace std;
 
 class IdProcessor : public AimlProcessor
 {

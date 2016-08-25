@@ -7,14 +7,9 @@
 #define GET_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Memory.h"
-#include "Kernel.h"
-#include "Utils.h"
 
-#include <string>
-#include <iostream>
-
-using namespace std;
+#include "../Memory.h"
+#include "../Utils.h"
 
 class GetProcessor : public AimlProcessor
 {

@@ -7,13 +7,9 @@
 #define SET_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Memory.h"
-#include "Kernel.h"
-#include "Utils.h"
 
-#include <string>
-
-using namespace std;
+#include "../Memory.h"
+#include "../Kernel.h"
 
 class SetProcessor : public AimlProcessor
 {

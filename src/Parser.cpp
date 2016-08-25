@@ -4,9 +4,7 @@
  * @author    Jonathan Roewen
  */
 #include "Parser.h"
-
 #include "Utils.h"
-
 #include "StringTokenizer.h"
 
 PElement Parser::parse(istream &in, const string &) {

@@ -7,13 +7,10 @@
 #ifndef SECURE_PROCESSOR_H
 #define SECURE_PROCESSOR_H
 
-#include <string>
+#include "AimlProcessor.h"
+
 #include <vector>
 #include <algorithm>    //    For find() right?
-#include "AimlProcessor.h"
-#include "Kernel.h"
-
-using namespace std;
 
 /** This comment contains code to put into a .cpp file .. I'm lazy!
 

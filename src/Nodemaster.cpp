@@ -4,7 +4,6 @@
  * @author    Jonathan Roewen
  */
 #include "Nodemaster.h"
-
 #include "Utils.h"
 
 Nodemaster *Nodemaster::getChild(const string &key) {

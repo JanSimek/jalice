@@ -7,12 +7,8 @@
 #define THAT_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Kernel.h"
-#include "Memory.h"
 
-#include <string>
-
-using namespace std;
+#include "../Memory.h"
 
 class ThatProcessor : public AimlProcessor
 {

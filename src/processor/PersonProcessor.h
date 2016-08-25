@@ -7,12 +7,6 @@
 #define PERSON_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Substituter.h"
-#include "Kernel.h"
-
-#include <string>
-
-using namespace std;
 
 class PersonProcessor : public AimlProcessor
 {

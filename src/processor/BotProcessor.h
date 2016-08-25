@@ -7,11 +7,8 @@
 #define BOT_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Kernel.h"
 
-#include <string>
-
-using namespace std;
+#include "../Kernel.h"
 
 class BotProcessor : public AimlProcessor
 {

@@ -18,9 +18,10 @@
 #include "Nodemaster.h"
 #include "Substituter.h"
 #include "StringTokenizer.h"
-#include "TemplateProcessor.h"
 #include "PreParser.h"
 #include "AimlWriter.h"
+
+#include "processor/TemplateProcessor.h"
 
 int totalCategories = 0;
 long totalSize = 0;

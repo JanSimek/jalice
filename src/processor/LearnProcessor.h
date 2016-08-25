@@ -7,16 +7,14 @@
 #define LEARN_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Substituter.h"
-#include "Parser.h"
-#include "Kernel.h"
-#include "Nodemaster.h"
-#include "Utils.h"
 
-#include <string>
+#include "../Substituter.h"
+#include "../Parser.h"
+#include "../Kernel.h"
+#include "../Nodemaster.h"
+#include "../Utils.h"
+
 #include <fstream>
-
-using namespace std;
 
 extern int totalCategories;
 

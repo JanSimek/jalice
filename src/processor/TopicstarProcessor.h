@@ -1,25 +1,20 @@
 /**
- * ThatstarProcessor - Gets the nth * of <that>
+ * TopicstarProcessor - Retrieves nth * of <topic>
  *
  * @author    Jonathan Roewen
  */
-#ifndef THATSTAR_PROCESSOR_H
-#define THATSTAR_PROCESSOR_H
+#ifndef TOPICSTAR_PROCESSOR_H
+#define TOPICSTAR_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Kernel.h"
 
-#include <string>
-
-using namespace std;
-
-class ThatstarProcessor : public AimlProcessor
+class TopicstarProcessor : public AimlProcessor
 {
 public:
-    ~ThatstarProcessor() { }
+    ~TopicstarProcessor() { }
     
     string getName() const {
-        return "thatstar";
+        return "topicstar";
     }
     string getVersion() const {
         return "1.0";
@@ -29,7 +24,7 @@ public:
         if (index.empty()) {
             index = "1";
         }
-        return m->getThatStar(index[0] - '0');
+        return m->getTopicStar(index[0] - '0');
     }
 };
 

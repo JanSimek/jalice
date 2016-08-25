@@ -7,14 +7,11 @@
 #define FORMAL_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "StringTokenizer.h"
-#include "Kernel.h"
 
-#include <string>
+#include "../Kernel.h"
+#include "../StringTokenizer.h"
 
 #include <cctype>
-
-using namespace std;
 
 class FormalProcessor : public AimlProcessor
 {

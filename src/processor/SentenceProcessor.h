@@ -7,13 +7,8 @@
 #define SENTENCE_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Kernel.h"
-
-#include <string>
 
 #include <cctype>
-
-using namespace std;
 
 class SentenceProcessor : public AimlProcessor
 {

@@ -7,12 +7,6 @@
 #define INPUT_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Memory.h"
-#include "Kernel.h"
-
-#include <string>
-
-using namespace std;
 
 class InputProcessor : public AimlProcessor
 {

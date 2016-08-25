@@ -9,12 +9,6 @@
 
 #include "AimlProcessor.h"
 
-#include <string>
-
-using namespace std;
-
-#include "Utils.h"
-
 class StarProcessor : public AimlProcessor
 {
 public:

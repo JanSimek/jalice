@@ -4,9 +4,8 @@
  * @author    Jonathan Roewen
  */
 #include "TemplateProcessor.h"
-#include "Responder.h"
-#include "Handler.h"
-#include <iostream>
+
+#include "../Handler.h"
 
 using namespace std;
 

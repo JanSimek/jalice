@@ -7,13 +7,6 @@
 #define CONDITION_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Memory.h"
-#include "Kernel.h"
-#include "Utils.h"
-
-#include <string>
-
-using namespace std;
 
 class ConditionProcessor : public AimlProcessor
 {

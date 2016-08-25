@@ -7,13 +7,10 @@
 #define SRAI_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Kernel.h"
-#include "Utils.h"
 
-#include <string>
-#include <iostream>
+#include "../Utils.h"
 
-using namespace std;
+#include "../Kernel.h"
 
 class SraiProcessor : public AimlProcessor
 {

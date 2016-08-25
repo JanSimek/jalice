@@ -6,12 +6,11 @@
 #ifndef TEMPLATE_PROCESSOR_H
 #define TEMPLATE_PROCESSOR_H
 
-#include <map>
-#include <string>
-
-using namespace std;
-
 #include "AimlProcessor.h"
+
+#include "../Responder.h"
+
+#include <map>
 
 class TemplateProcessor : public AimlProcessor
 {

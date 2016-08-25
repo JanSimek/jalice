@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 2.8)
 
 project(jalice)
 
-#file(GLOB_RECURSE SOURCES "src/*.cpp")
-#file(GLOB_RECURSE HEADERS "src/*.h")
-
 set(SOURCES
     src/Main.cpp
 
@@ -40,33 +37,33 @@ set(SOURCES
     src/Utils.cpp
     src/Utils.h
 
-    src/TemplateProcessor.cpp
-    src/TemplateProcessor.h
-    src/AimlProcessor.h
-    src/BotProcessor.h
-    src/BrProcessor.h
-    src/ConditionProcessor.h
-    src/FormalProcessor.h
-    src/GetProcessor.h
-    src/IdProcessor.h
-    src/InputProcessor.h
-    src/LearnProcessor.h
-    src/LowercaseProcessor.h
-    src/NameProcessor.h
-    src/NormalizeProcessor.h
-    src/PersonProcessor.h
-    src/RandomProcessor.h
-    src/SecureProcessor.h
-    src/SentenceProcessor.h
-    src/SetProcessor.h
-    src/SrProcessor.h
-    src/SraiProcessor.h
-    src/StarProcessor.h
-    src/ThatProcessor.h
-    src/ThatstarProcessor.h
-    src/ThinkProcessor.h
-    src/TopicstarProcessor.h
-    src/UppercaseProcessor.h
+    src/processor/TemplateProcessor.cpp
+    src/processor/TemplateProcessor.h
+    src/processor/AimlProcessor.h
+    src/processor/BotProcessor.h
+    src/processor/BrProcessor.h
+    src/processor/ConditionProcessor.h
+    src/processor/FormalProcessor.h
+    src/processor/GetProcessor.h
+    src/processor/IdProcessor.h
+    src/processor/InputProcessor.h
+    src/processor/LearnProcessor.h
+    src/processor/LowercaseProcessor.h
+    src/processor/NameProcessor.h
+    src/processor/NormalizeProcessor.h
+    src/processor/PersonProcessor.h
+    src/processor/RandomProcessor.h
+    src/processor/SecureProcessor.h
+    src/processor/SentenceProcessor.h
+    src/processor/SetProcessor.h
+    src/processor/SrProcessor.h
+    src/processor/SraiProcessor.h
+    src/processor/StarProcessor.h
+    src/processor/ThatProcessor.h
+    src/processor/ThatstarProcessor.h
+    src/processor/ThinkProcessor.h
+    src/processor/TopicstarProcessor.h
+    src/processor/UppercaseProcessor.h
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

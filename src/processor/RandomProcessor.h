@@ -7,11 +7,6 @@
 #define RANDOM_PROCESSOR_H
 
 #include "AimlProcessor.h"
-#include "Kernel.h"
-
-#include <string>
-
-using namespace std;
 
 #include <time.h>
 #include <stdlib.h>

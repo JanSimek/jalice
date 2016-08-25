@@ -8,9 +8,9 @@
 
 #include <string>
 
-#include "Element.h"
-#include "Match.h"
-#include "Responder.h"
+#include "../Element.h"
+#include "../Match.h"
+#include "../Responder.h"
 
 using namespace std;
 
