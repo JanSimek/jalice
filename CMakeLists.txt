@@ -12,15 +12,12 @@ set(SOURCES
     src/AimlWriter.h
     src/Database.cpp
     src/Database.h
-    src/Compat.h
     src/Element.cpp
     src/Element.h
     src/Handler.cpp
     src/Handler.h
     src/Kernel.cpp
     src/Kernel.h
-    src/Logger.cpp
-    src/Logger.h
     src/Match.cpp
     src/Match.h
     src/Memory.cpp

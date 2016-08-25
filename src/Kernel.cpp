@@ -7,12 +7,7 @@
 
 #include <fstream>
 #include <iostream>
-//#ifdef __BEOS__
-// #include <sstream>
-// #define stringstream strstream
-//#else
- #include <strstream>
-//#endif
+#include <sstream>
 
 #include "Match.h"
 #include "Utils.h"
@@ -722,7 +717,7 @@ string Kernel::respond(const string &input, const string &id, Responder *r, int,
             //    For getting the match...
             string tmpl = "<template>" + m->getTemplate() + "</template>";
             Parser *p = new Parser();
-            strstream ss;
+            std::stringstream ss;
             ss << tmpl << endl;
             currentResponse = Kernel::process(m, p->parse(ss, "xxx"), r, id);
             Memory::setValue("beforethat", id, that);

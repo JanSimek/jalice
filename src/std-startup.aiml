@@ -1,8 +1,6 @@
-<aiml version="1.0">
+<?xml version="1.0" endocing="UTF-8"?>
+<aiml>
 
-<!-- Anna set doesn't define this I think -->
-<!-- You can change this .. however, if another file gets loaded later, with this pattern,
-	then that name will get used instead -->
 <category>
 <pattern>BOT NAME</pattern>
 <template>Anna</template>
@@ -12,9 +10,6 @@
 <pattern>BOOTSTRAP</pattern>
 <template>
 <secure>
-<learn>irc-conn.aiml</learn>
-<learn>simple-auth.aiml</learn>
-<learn>webserver.aiml</learn>
 <srai>LOAD AIML A</srai>
 <srai>SHOW INTRO HELP</srai>
 </secure>

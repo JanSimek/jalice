@@ -1,6 +1,5 @@
 #include "Kernel.h"
 #include "Utils.h"
-//#include "SocketHandler.h"
 #include "Memory.h"
 
 #include <string>
@@ -47,8 +46,4 @@ int main(int argc, char **argv) {
             cout << botName << " > " << trim(outLine) << endl;
         }
     }
-//    k->respond("run system xml socket server", "system");
-//    cout << "Starting socket loop" << endl;
-//    SocketHandler::runLoop();
-//    cout << "Server shutdown successfully" << endl;
 }
