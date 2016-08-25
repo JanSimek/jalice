@@ -13,7 +13,6 @@
 #include "SrProcessor.h"
 #include "BotProcessor.h"
 #include "GetProcessor.h"
-#include "IrcProcessor.h"
 #include "SetProcessor.h"
 #include "NameProcessor.h"
 #include "SraiProcessor.h"
@@ -32,12 +31,7 @@
 #include "NormalizeProcessor.h"
 #include "TopicstarProcessor.h"
 #include "UppercaseProcessor.h"
-#include "HTTPProcessor.h"
 #include "SecureProcessor.h"    //    Contains AuthenticateProcessor too
-#if defined(__BEOS__) || defined(WIN32)
-    #include "JavaScriptProcessor.h"
-#endif
-#include "XmlSocketResponder.h"
 
 map<string, AimlProcessor *> Handler::processors;
 
@@ -47,7 +41,6 @@ void Handler::init() {
     processors["sr"] = new SrProcessor();
     processors["bot"] = new BotProcessor();
     processors["get"] = new GetProcessor();
-    processors["irc"] = new IrcProcessor();
     processors["set"] = new SetProcessor();
     processors["name"] = new NameProcessor();
     processors["srai"] = new SraiProcessor();
@@ -67,16 +60,11 @@ void Handler::init() {
     processors["topicstar"] = new TopicstarProcessor();
     processors["uppercase"] = new UppercaseProcessor();
     processors["template"] = new TemplateProcessor();
-    processors["http"] = new HTTPProcessor();
     processors["secure"] = new SecureProcessor();
-#if defined(__BEOS__) || defined(WIN32)
-    processors["javascript"] = new JavaScriptProcessor();
-#endif
     processors["authenticate"] = new AuthenticateProcessor();
     
     processors["person2"] = new Person2Processor();
     processors["gender"] = new GenderProcessor();
-    processors["xmlsocket"] = new XmlSocketProcessor();
 }
 
 bool Handler::hasProcessor(const string &name) {
