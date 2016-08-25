@@ -14,7 +14,7 @@
 
 using namespace std;
 
-Element::Element(const string &name = ""):text(""),tname(""),nspace("") {
+Element::Element(const string &name):text(""),tname(""),nspace("") {
     if (!name.empty()) {
         setName(name);
     }

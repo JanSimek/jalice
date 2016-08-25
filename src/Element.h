@@ -24,7 +24,7 @@ typedef list<PElement>::iterator velement_it;
 class Element
 {
 public:
-    Element(const string &);
+    Element(const string &name = "");
     ~Element();
     
     string getTagname() const;
