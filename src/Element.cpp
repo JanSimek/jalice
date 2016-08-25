@@ -84,7 +84,7 @@ void Element::setAttribute(const string &key, const string &value) {
 }
 
 bool Element::hasNamespace() const {
-    return strlen(nspace)!=0;
+    return !nspace.empty();
 }
 
 bool Element::hasAttributes() const {

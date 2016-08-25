@@ -60,7 +60,9 @@ private:
     static string unslash(const string &);
     
     string text;
-    char *tname, *nspace;
+    string tname;
+    string nspace;
+
     map<string, string> attributes;
     PElement child, next, last;
 };
