@@ -2,9 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(jalice)
 
-set(SOURCES
-    src/Main.cpp
-
+set(JALICE_SOURCES
     src/AimlWriter.cpp
     src/AimlWriter.h
     src/Database.cpp
@@ -66,4 +64,10 @@ set(SOURCES
     src/processor/UppercaseProcessor.h
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_library(${PROJECT_NAME} ${JALICE_SOURCES})
+
+add_executable(${PROJECT_NAME}_console clients/console/main.cpp)
+target_link_libraries(${PROJECT_NAME}_console ${PROJECT_NAME})
+
+add_executable(${PROJECT_NAME}_xmpp clients/xmpp/main.cpp)
+target_link_libraries(${PROJECT_NAME}_xmpp ${PROJECT_NAME})

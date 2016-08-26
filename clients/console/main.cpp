@@ -1,6 +1,6 @@
-#include "Kernel.h"
-#include "Utils.h"
-#include "Memory.h"
+#include "../../src/Kernel.h"
+#include "../../src/Utils.h"
+#include "../../src/Memory.h"
 
 #include <string>
 #include <iostream>

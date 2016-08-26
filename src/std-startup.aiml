@@ -23,7 +23,6 @@
 Welcome to J-Alice version 0.3<br/>
 ==============================<br/>
 <br/>
-- To configure IRC, edit irc-conn.aiml. Examples are provided.<br/>
 - Editing AIML files that are in use by the bot can cause the bot to crash.<br/>
   This is due to the fact that the AIML files are read directly when<br/>
   retrieving the &lt;template&gt;. Even if the bot doesn't crash, it's output may<br/>
@@ -36,16 +35,11 @@ Welcome to J-Alice version 0.3<br/>
   &lt;file&gt;, where &lt;file&gt; is the name of the file, minus the .aiml extension.<br/>
   EG: user &gt; load hello<br/>
   will cause the bot to try and load hello.aiml.<br/>
-- A simple, uncustomisable webserver has been added. Look in webserver.aiml<br/>
-  for configuring the port used by the bot.<br/>
 - To shutdown the bot, type 'exit'. Note: this only works in the command<br/>
   prompt. To change what the bot does at startup, edit the BOOTSTRAP category<br/>
   in std-startup.aiml.<br/>
 - To display the Frequently Asked Questions (FAQs), type 'display help' at<br/>
   the prompt.<br/>
-- When talking to the bot on IRC, it's nick must be part of the message if<br/>
-  talking in a channel. Also, you must use same case as the bot's nick (ie:<br/>
-  it is case-sensitive).<br/>
 <br/>
 Have fun :-)<br/>
 </template>
@@ -162,7 +156,6 @@ These are the FAQs for J-Alice<br/>
 <br/>
 1. Why doesn't it say anything?<br/>
 2. How do I load AIML files?<br/>
-3. How do I get IRC to work, and what can I do?<br/>
 <br/>
 To display an answer, type: ANSWER FAQ #, replacing #<br/>
 with the number of the question you want answered.<br/>
@@ -189,35 +182,6 @@ user &gt; load hello<br/>
 and it will load hello.aiml. Just substitute 'hello'<br/>
 with the name of the file you want to load.<br/>
 Note: this only loads files with the .aiml extension.<br/>
-</template>
-</category>
-
-<category>
-<pattern>ANSWER FAQ 3</pattern>
-<template>How do I get IRC to work, and what can I do:<br/>
-<br/>
-Sample configurations are provided in irc-conn.aiml.<br/>
-Feel free to change the configuration options :-)<br/>
-If you have the pattern: JOIN OPN, then typing 'join opn'<br/>
-at the prompt will trigger that category. If the template<br/>
-contains the correct IRC tags, the bot will attempt to<br/>
-connect to the specified server.<br/>
-<br/>
-If you are having problems, try using a different server for<br/>
-your network. Also, servers requiring IDENT will not work.<br/>
-You may have to ensure that the nick the bot uses is not taken,<br/>
-as it is unable to switch nicks yet.<br/>
-<br/>
-If your bot fails to join a channel upon connecting to the server,<br/>
-then you can private message the bot, specifying the command:<br/>
-'join #channel', and it will join #channel. Simply change #channel<br/>
-to be the channel you wish it to join. To force the bot to leave a<br/>
-channel, use 'part #channel', and it will leave the channel.<br/>
-<br/>
-Note, for the above commands to work, you must be authorised. Details<br/>
-of authorising are given in the simple-auth.aiml file.<br/>
-<br/>
-The above commands, amongst others are detailed in irc-conn.aiml.<br/>
 </template>
 </category>
 
