@@ -12,19 +12,15 @@
 
 class UppercaseProcessor : public AimlProcessor
 {
-public:
-    ~UppercaseProcessor() { }
-    
-    string getName() const {
-        return "uppercase";
-    }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *m, PElement e, Responder *r, const string &id) {
-        string result = Kernel::process(m, e, r, id);
-        return toUpper(result);
-    }
+ public:
+  ~UppercaseProcessor() {}
+  string getName() const { return "uppercase"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *r, const string &id)
+  {
+    string result = Kernel::process(m, e, r, id);
+    return toUpper(result);
+  }
 };
 
 #endif

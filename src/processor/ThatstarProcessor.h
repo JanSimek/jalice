@@ -10,22 +10,19 @@
 
 class ThatstarProcessor : public AimlProcessor
 {
-public:
-    ~ThatstarProcessor() { }
-    
-    string getName() const {
-        return "thatstar";
+ public:
+  ~ThatstarProcessor() {}
+  string getName() const { return "thatstar"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *, const string &)
+  {
+    string index = e->getAttribute("index");
+    if (index.empty())
+    {
+      index = "1";
     }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *m, PElement e, Responder *, const string &) {
-        string index = e->getAttribute("index");
-        if (index.empty()) {
-            index = "1";
-        }
-        return m->getThatStar(index[0] - '0');
-    }
+    return m->getThatStar(index[0] - '0');
+  }
 };
 
 #endif

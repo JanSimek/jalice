@@ -7,9 +7,9 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include <string>
 #include <iostream>
 #include <stack>
+#include <string>
 
 using namespace std;
 
@@ -17,21 +17,19 @@ using namespace std;
 
 class Parser
 {
-public:
-    Parser() {
-        root = current = PElement(NULL);
-    }
-    
-    PElement parse(istream &in, const string &xxx);
-    PElement getRoot() const;
-    void reset();
-private:
-    PElement current, root;
-    stack<PElement> recurser;
-    
-    void addElement(string &name);
-    void addTextElement(const string &text);
-    void addCDataElement(const string &text);
+ public:
+  Parser() { root = current = PElement(NULL); }
+  PElement parse(istream &in, const string &xxx);
+  PElement getRoot() const;
+  void reset();
+
+ private:
+  PElement current, root;
+  stack<PElement> recurser;
+
+  void addElement(string &name);
+  void addTextElement(const string &text);
+  void addCDataElement(const string &text);
 };
 
-#endif 
+#endif

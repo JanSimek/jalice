@@ -9,48 +9,44 @@
 
 #include "AimlProcessor.h"
 
+#include <algorithm>  //    For find() right?
 #include <vector>
-#include <algorithm>    //    For find() right?
 
 /** This comment contains code to put into a .cpp file .. I'm lazy!
 
 vector<string> SecureProcessor::users;    //    stops link errors
 
     Or can this be put just after the class decl? **/
-    static vector<string> users;
+static vector<string> users;
 
 class SecureProcessor : public AimlProcessor
 {
-public:
-    SecureProcessor() {
-        //    The console user .. this does have one flaw though:
-        //    If an IRC user has nick 'localhost', then they will
-        //    be one of the authenticated users :-(
-        users.push_back("localhost");
-        users.push_back("system");
+ public:
+  SecureProcessor()
+  {
+    //    The console user .. this does have one flaw though:
+    //    If an IRC user has nick 'localhost', then they will
+    //    be one of the authenticated users :-(
+    users.push_back("localhost");
+    users.push_back("system");
+  }
+  ~SecureProcessor() {}
+  string getName() const { return "secure"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *r, const string &id)
+  {
+    vector<string>::iterator itr = find(users.begin(), users.end(), id);
+    if (itr == users.end())
+    {
+      //    User not in list, so not authenticated
+      return e->getAttribute("error", m, id);  // +e->getTagname() + ":"+e->getNamespace();
+                                               //    That should be changed somehow
+      //    Perhaps like Kernel::respond("DENYUSER", id);
     }
-    ~SecureProcessor() { }
-    
-    string getName() const {
-        return "secure";
-    }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *m, PElement e, Responder *r, const string &id) {
-        vector<string>::iterator itr = find(users.begin(), users.end(), id);
-        if (itr == users.end()) {
-            //    User not in list, so not authenticated
-            return e->getAttribute("error", m, id);// +e->getTagname() + ":"+e->getNamespace();
-            //    That should be changed somehow
-            //    Perhaps like Kernel::respond("DENYUSER", id);
-        }
-        return Kernel::process(m, e, r, id);
-    }
-    static void addAuthenticatedUser(const string &id) {
-        users.push_back(id);
-    }
-//private:
+    return Kernel::process(m, e, r, id);
+  }
+  static void addAuthenticatedUser(const string &id) { users.push_back(id); }
+  // private:
 };
 
 #endif
@@ -65,19 +61,15 @@ using namespace std;
 
 class AuthenticateProcessor : public AimlProcessor
 {
-public:
-    ~AuthenticateProcessor() { }
-    
-    string getName() const {
-        return "authenticate";
-    }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *, PElement, Responder *, const string &id) {
-        SecureProcessor::addAuthenticatedUser(id);
-        return "authorised";
-    }
+ public:
+  ~AuthenticateProcessor() {}
+  string getName() const { return "authenticate"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *, PElement, Responder *, const string &id)
+  {
+    SecureProcessor::addAuthenticatedUser(id);
+    return "authorised";
+  }
 };
 
 #endif

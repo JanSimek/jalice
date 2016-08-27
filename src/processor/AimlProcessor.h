@@ -14,17 +14,17 @@
 
 using namespace std;
 
-//class Match;
-//class Responder;
-    
+// class Match;
+// class Responder;
+
 class AimlProcessor
 {
-public:
-    virtual ~AimlProcessor() { };
-    
-    virtual string getName() const = 0;
-    virtual string getVersion() const = 0;
-    virtual string process(Match *, PElement, Responder *, const string &) = 0;
+ public:
+  virtual ~AimlProcessor(){};
+
+  virtual string getName() const = 0;
+  virtual string getVersion() const = 0;
+  virtual string process(Match *, PElement, Responder *, const string &) = 0;
 };
 
 #endif

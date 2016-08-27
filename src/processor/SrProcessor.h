@@ -12,19 +12,15 @@
 
 class SrProcessor : public AimlProcessor
 {
-public:
-    ~SrProcessor() { }
-    
-    string getName() const {
-        return "sr";
-    }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *m, PElement, Responder *, const string &id) {
-        string star = m->getInputStar(1);
-        return Kernel::respond(star, id, true);
-    }
+ public:
+  ~SrProcessor() {}
+  string getName() const { return "sr"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement, Responder *, const string &id)
+  {
+    string star = m->getInputStar(1);
+    return Kernel::respond(star, id, true);
+  }
 };
 
 #endif

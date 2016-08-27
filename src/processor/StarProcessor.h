@@ -11,28 +11,26 @@
 
 class StarProcessor : public AimlProcessor
 {
-public:
-    ~StarProcessor() { }
-    
-    string getName() const {
-        return "star";
+ public:
+  ~StarProcessor() {}
+  string getName() const { return "star"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *, const string &)
+  {
+    string index = e->getAttribute("index");
+    if (index.empty())
+    {
+      index = "1";
     }
-    string getVersion() const {
-        return "1.0";
+    //    replace all this crap with atoi .. which header tho?
+    int realIndex = 0;
+    for (unsigned int ix = 0; ix < index.length(); ++ix)
+    {
+      realIndex *= 10;
+      realIndex += index[ix] - '0';
     }
-    string process(Match *m, PElement e, Responder *, const string &) {
-        string index = e->getAttribute("index");
-        if (index.empty()) {
-            index = "1";
-        }
-        //    replace all this crap with atoi .. which header tho?
-        int realIndex = 0;
-        for (unsigned int ix = 0; ix < index.length(); ++ix) {
-            realIndex *= 10;
-            realIndex += index[ix] - '0';
-        }
-        return m->getInputStar(realIndex);
-    }
+    return m->getInputStar(realIndex);
+  }
 };
 
 #endif

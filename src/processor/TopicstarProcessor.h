@@ -10,22 +10,19 @@
 
 class TopicstarProcessor : public AimlProcessor
 {
-public:
-    ~TopicstarProcessor() { }
-    
-    string getName() const {
-        return "topicstar";
+ public:
+  ~TopicstarProcessor() {}
+  string getName() const { return "topicstar"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *, const string &)
+  {
+    string index = e->getAttribute("index");
+    if (index.empty())
+    {
+      index = "1";
     }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *m, PElement e, Responder *, const string &) {
-        string index = e->getAttribute("index");
-        if (index.empty()) {
-            index = "1";
-        }
-        return m->getTopicStar(index[0] - '0');
-    }
+    return m->getTopicStar(index[0] - '0');
+  }
 };
 
 #endif

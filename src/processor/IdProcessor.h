@@ -10,18 +10,11 @@
 
 class IdProcessor : public AimlProcessor
 {
-public:
-    ~IdProcessor() { }
-    
-    string getName() const {
-        return "id";
-    }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *, PElement, Responder *, const string &id) {
-        return id;
-    }
+ public:
+  ~IdProcessor() {}
+  string getName() const { return "id"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *, PElement, Responder *, const string &id) { return id; }
 };
 
 #endif

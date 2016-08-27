@@ -10,19 +10,15 @@
 
 class LowercaseProcessor : public AimlProcessor
 {
-public:
-    ~LowercaseProcessor() { }
-    
-    string getName() const {
-        return "lowercase";
-    }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *m, PElement e, Responder *r, const string &id) {
-        string result = Kernel::process(m, e, r, id);
-        return toLower(result);
-    }
+ public:
+  ~LowercaseProcessor() {}
+  string getName() const { return "lowercase"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *r, const string &id)
+  {
+    string result = Kernel::process(m, e, r, id);
+    return toLower(result);
+  }
 };
 
 #endif

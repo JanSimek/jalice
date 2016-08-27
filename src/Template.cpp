@@ -14,41 +14,41 @@
 vector<string> Template::filenames;
 vector<long> Template::filesizes;
 
-string Template::fetch() {
-    //    Get the filename ..
-    const char *filename = Template::getFilename(filenameIx);
-    //    When have <template/>
-    if (end == start) {
-        return "";
-    }
-    int length = end - start;
-    ifstream fin(filename, ios::in | ios::binary);
-    char *input = new char[length+1];
-    if(!fin.good())
-        return "Error reading file";
-    fin.seekg(start);
-    fin.read(input, length);
-    fin.close();
-    input[length] = '\0';
-    string ret(input);
-    delete [] input;
-    return ret;
+string Template::fetch()
+{
+  //    Get the filename ..
+  const char *filename = Template::getFilename(filenameIx);
+  //    When have <template/>
+  if (end == start)
+  {
+    return "";
+  }
+  int length = end - start;
+  ifstream fin(filename, ios::in | ios::binary);
+  char *input = new char[length + 1];
+  if (!fin.good()) return "Error reading file";
+  fin.seekg(start);
+  fin.read(input, length);
+  fin.close();
+  input[length] = '\0';
+  string ret(input);
+  delete[] input;
+  return ret;
 }
 
-const char *Template::getFilename(int index) {
-    return filenames[index].c_str();
-}
-
-void Template::reloadFile(int index) {
-    string fn = filenames[index];
-    long fs = filesizes[index];
-    ifstream fin;
-    fin.open(fn.c_str(), ios::in | ios::binary);
-    fin.seekg(0, ios::end);
-    int s = fin.tellg();
-    if (s != fs) {
-        //    Reload .. return true
-        filesizes[index] = s;
-        Kernel::load(fn);
-    }
+const char *Template::getFilename(int index) { return filenames[index].c_str(); }
+void Template::reloadFile(int index)
+{
+  string fn = filenames[index];
+  long fs = filesizes[index];
+  ifstream fin;
+  fin.open(fn.c_str(), ios::in | ios::binary);
+  fin.seekg(0, ios::end);
+  int s = fin.tellg();
+  if (s != fs)
+  {
+    //    Reload .. return true
+    filesizes[index] = s;
+    Kernel::load(fn);
+  }
 }

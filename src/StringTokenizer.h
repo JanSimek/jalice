@@ -12,24 +12,25 @@ using namespace std;
 
 class StringTokenizer
 {
-public:
-    StringTokenizer(const string &s, const string &d = " \t\n\r", bool rt = false) :
-        currentPosition(0), str(s), delim(d), retTok(rt) {
-        maxPosition = str.length();
-    }
-    
-    bool hasMoreTokens();
-    string nextToken();
-    string nextToken(const string &d);
-    int countTokens();
-private:
-    int currentPosition;
-    string str;
-    string delim;
-    bool retTok;
-    int maxPosition;
-    
-    void skipDelimiters();
+ public:
+  StringTokenizer(const string &s, const string &d = " \t\n\r", bool rt = false) : currentPosition(0), str(s), delim(d), retTok(rt)
+  {
+    maxPosition = str.length();
+  }
+
+  bool hasMoreTokens();
+  string nextToken();
+  string nextToken(const string &d);
+  int countTokens();
+
+ private:
+  int currentPosition;
+  string str;
+  string delim;
+  bool retTok;
+  int maxPosition;
+
+  void skipDelimiters();
 };
 
-#endif 
+#endif

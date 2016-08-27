@@ -10,80 +10,80 @@
 
 class PersonProcessor : public AimlProcessor
 {
-public:
-    ~PersonProcessor() { }
-    
-    string getName() const {
-        return "person";
+ public:
+  ~PersonProcessor() {}
+  string getName() const { return "person"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *r, const string &id)
+  {
+    string result = "";
+    string index = e->getAttribute("index");
+    if (index.empty())
+    {
+      index = "1";
     }
-    string getVersion() const {
-        return "1.0";
+    if (e->hasChildren())
+    {
+      result = Kernel::process(m, e, r, id);
     }
-    string process(Match *m, PElement e, Responder *r, const string &id) {
-        string result = "";
-        string index = e->getAttribute("index");
-        if (index.empty()) {
-            index = "1";
-        }
-        if (e->hasChildren()) {
-            result = Kernel::process(m, e, r, id);
-        } else {
-            result = m->getInputStar(index[0] - '0');
-        }
-        return Substituter::person(result);
+    else
+    {
+      result = m->getInputStar(index[0] - '0');
     }
+    return Substituter::person(result);
+  }
 };
 
 class Person2Processor : public AimlProcessor
 {
-public:
-    ~Person2Processor() { }
-    
-    string getName() const {
-        return "person2";
+ public:
+  ~Person2Processor() {}
+  string getName() const { return "person2"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *r, const string &id)
+  {
+    string result = "";
+    string index = e->getAttribute("index");
+    if (index.empty())
+    {
+      index = "1";
     }
-    string getVersion() const {
-        return "1.0";
+    if (e->hasChildren())
+    {
+      result = Kernel::process(m, e, r, id);
     }
-    string process(Match *m, PElement e, Responder *r, const string &id) {
-        string result = "";
-        string index = e->getAttribute("index");
-        if (index.empty()) {
-            index = "1";
-        }
-        if (e->hasChildren()) {
-            result = Kernel::process(m, e, r, id);
-        } else {
-            result = m->getInputStar(index[0] - '0');
-        }
-        return Substituter::substitute(result, "person2");
+    else
+    {
+      result = m->getInputStar(index[0] - '0');
     }
+    return Substituter::substitute(result, "person2");
+  }
 };
 
 class GenderProcessor : public AimlProcessor
 {
-public:
-    ~GenderProcessor() { }
-    
-    string getName() const {
-        return "gender";
+ public:
+  ~GenderProcessor() {}
+  string getName() const { return "gender"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *r, const string &id)
+  {
+    string result = "";
+    string index = e->getAttribute("index");
+    if (index.empty())
+    {
+      index = "1";
     }
-    string getVersion() const {
-        return "1.0";
+    if (e->hasChildren())
+    {
+      result = Kernel::process(m, e, r, id);
     }
-    string process(Match *m, PElement e, Responder *r, const string &id) {
-        string result = "";
-        string index = e->getAttribute("index");
-        if (index.empty()) {
-            index = "1";
-        }
-        if (e->hasChildren()) {
-            result = Kernel::process(m, e, r, id);
-        } else {
-            result = m->getInputStar(index[0] - '0');
-        }
-        return Substituter::substitute(result, "gender");
+    else
+    {
+      result = m->getInputStar(index[0] - '0');
     }
+    return Substituter::substitute(result, "gender");
+  }
 };
 
 #endif

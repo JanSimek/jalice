@@ -10,18 +10,11 @@
 
 class NormalizeProcessor : public AimlProcessor
 {
-public:
-    ~NormalizeProcessor() { }
-    
-    string getName() const {
-        return "normalize";
-    }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *m, PElement e, Responder *r, const string &id) {
-        return Substituter::normalize(Kernel::process(m, e, r, id));
-    }
+ public:
+  ~NormalizeProcessor() {}
+  string getName() const { return "normalize"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *r, const string &id) { return Substituter::normalize(Kernel::process(m, e, r, id)); }
 };
 
 #endif

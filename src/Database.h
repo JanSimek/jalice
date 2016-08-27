@@ -19,42 +19,38 @@ typedef map<string, table> database;
 
 class DatabaseException
 {
-public:
-    DatabaseException(const string &s) : exception(s) { }
-    
-    string getException() const {
-        return exception;
-    }
-    
-    string exception;
+ public:
+  DatabaseException(const string &s) : exception(s) {}
+  string getException() const { return exception; }
+  string exception;
 };
 
 class Database
 {
-public:
-    Database();
-    
-    database d;
-    
-    void Insert(const string &, const string &, Record *);
-    void Delete(const string &, const string &, bool *, Record *);
-    void Update(const string &, const string &, bool *, Record *, bool *, Record *);
-    Record **Select(const string &, bool *, const string &, bool *, Record *);
-//private:
-    void save();
-    void load();
+ public:
+  Database();
+
+  database d;
+
+  void Insert(const string &, const string &, Record *);
+  void Delete(const string &, const string &, bool *, Record *);
+  void Update(const string &, const string &, bool *, Record *, bool *, Record *);
+  Record **Select(const string &, bool *, const string &, bool *, Record *);
+  // private:
+  void save();
+  void load();
 };
 
 class Record
 {
-public:
-    string *data;
-    
-    Record(const string &, const string &, const string &, const string &, const string &, const string &, const string &);
-    Record();
-    Record(const Record &);
-    Record & operator=(const Record &);
-    ~Record();
+ public:
+  string *data;
+
+  Record(const string &, const string &, const string &, const string &, const string &, const string &, const string &);
+  Record();
+  Record(const Record &);
+  Record &operator=(const Record &);
+  ~Record();
 };
 
-#endif  
+#endif

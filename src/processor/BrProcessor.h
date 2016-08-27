@@ -12,18 +12,11 @@ using namespace std;
 
 class BrProcessor : public AimlProcessor
 {
-public:
-    ~BrProcessor() { }
-    
-    string getName() const {
-        return "br";
-    }
-    string getVersion() const {
-        return "1.0";
-    }
-    string process(Match *, PElement, Responder *, const string &) {
-        return "\n";
-    }
+ public:
+  ~BrProcessor() {}
+  string getName() const { return "br"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *, PElement, Responder *, const string &) { return "\n"; }
 };
 
 #endif

@@ -14,18 +14,19 @@
 
 class TemplateProcessor : public AimlProcessor
 {
-public:
-    ~TemplateProcessor();
-    
-    string getName() const;
-    string getVersion() const;
-    string process(Match *, PElement, Responder *, const string &);
-    static void addProcessor(AimlProcessor *);
-    static AimlProcessor *getProcessor(const string &name);
-    static string processTemplate(Match *, PElement, Responder *, const string &id);
-private:
-    static map<string, AimlProcessor *> processors;
-    static AimlProcessor *hook;
+ public:
+  ~TemplateProcessor();
+
+  string getName() const;
+  string getVersion() const;
+  string process(Match *, PElement, Responder *, const string &);
+  static void addProcessor(AimlProcessor *);
+  static AimlProcessor *getProcessor(const string &name);
+  static string processTemplate(Match *, PElement, Responder *, const string &id);
+
+ private:
+  static map<string, AimlProcessor *> processors;
+  static AimlProcessor *hook;
 };
 
 #endif

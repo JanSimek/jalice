@@ -13,27 +13,25 @@
 
 class GetProcessor : public AimlProcessor
 {
-public:
-    ~GetProcessor() { }
-    
-    string getName() const {
-        return "get";
+ public:
+  ~GetProcessor() {}
+  string getName() const { return "get"; }
+  string getVersion() const { return "1.0"; }
+  string process(Match *m, PElement e, Responder *r, const string &id)
+  {
+    string conjunction = e->getAttribute("conjunction", m, id);
+    if (conjunction.empty())
+    {
+      conjunction = " and ";
     }
-    string getVersion() const {
-        return "1.0";
+    //    Ignore conjunction for time being
+    string result = Memory::getValue(toLower(e->getAttribute("name", m, id)), id);
+    if (result.empty())
+    {
+      result = Kernel::process(m, e, r, id);
     }
-    string process(Match *m, PElement e, Responder *r, const string &id) {
-        string conjunction = e->getAttribute("conjunction", m, id);
-        if (conjunction.empty()) {
-            conjunction = " and ";
-        }
-        //    Ignore conjunction for time being
-        string result = Memory::getValue(toLower(e->getAttribute("name", m, id)), id);
-        if (result.empty()) {
-            result = Kernel::process(m, e, r, id);
-        }
-        return result;
-    }
+    return result;
+  }
 };
 
 #endif

@@ -13,14 +13,15 @@
 
 using namespace std;
 
-class Responder {
-public:
-    virtual ~Responder() { };
-    
-    /**
-     * Do we need the match element as well?
-     */
-    virtual string respond(Match *, PElement, const string &) = 0;
+class Responder
+{
+ public:
+  virtual ~Responder(){};
+
+  /**
+   * Do we need the match element as well?
+   */
+  virtual string respond(Match *, PElement, const string &) = 0;
 };
 
-#endif    //    RESPONDER_H
+#endif  //    RESPONDER_H

@@ -7,8 +7,8 @@
 #define NODEMASTER_H
 
 #include <map>
-#include <vector>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -16,23 +16,21 @@ using namespace std;
 
 class Nodemaster
 {
-public:
-    Nodemaster() {
-        templates = NULL;
-    }
-    ~Nodemaster() { }
-    
-    Nodemaster *getChild(const string &);
-    void addChild(const string &, Nodemaster *);
-    string getTemplate();
-    void addTemplate(Template *t);
-    bool hasTemplate();
-private:
-    map<char *, Nodemaster *> children;
-//    vector<Template> templates;
-    Template *templates;
-//    Template *templates;    
-//    unsigned int lastIndex;
+ public:
+  Nodemaster() { templates = NULL; }
+  ~Nodemaster() {}
+  Nodemaster *getChild(const string &);
+  void addChild(const string &, Nodemaster *);
+  string getTemplate();
+  void addTemplate(Template *t);
+  bool hasTemplate();
+
+ private:
+  map<char *, Nodemaster *> children;
+  //    vector<Template> templates;
+  Template *templates;
+  //    Template *templates;
+  //    unsigned int lastIndex;
 };
 
-#endif  
+#endif
