@@ -244,10 +244,9 @@
 				<li>I don't know anyone named</li>
 				<li>I am glad to hear that you are</li>
 				<li>It's good to meet someone who is</li>
-				<li>Do you mind if I tell other people you are </li>
-			</random>
-			<person/>.
-<think>
+				<li>Do you mind if I tell other people you are</li>
+			</random> <person/>.
+			<think>
 				<set name="it">
 					<set name="is">
 						<set name="topic">
@@ -9115,15 +9114,16 @@ hear about it, <get name="name"/>.
 					<star/>
 				</set>
 			</think>
-			<random>
-				<li>Only <star/>?
-You are quite mature.</li>
+			<condition name="age">
+				<li value="27">Most people die at 27, we just bury them at 72. Mark Twain said that, you know.</li>
+				<!-- if not 27, random list item below will be selected -->
+				<li>Only <star/>? You are quite mature.</li>
 				<li>You are too old for me.</li>
 				<li>Can you explain how it feels to be <star/> years old?</li>
 				<li>What is your fondest memory?</li>
 				<li>Oh, you were born in the 20th century!</li>
 				<li>What are the advantages to being <star/> years old?</li>
-			</random>
+			</condition>
 		</template>
 	</category>
 	<category>

@@ -24,7 +24,7 @@ class RandomProcessor : public AimlProcessor
     e->getChildren("li", &choices);
     int chosen = rand() % choices.size();
     velement_it ix;
-    // I wonder if this code is correct :)
+
     int i = 0;
     for (ix = choices.begin(); i < chosen; i++) ix++;
     PElement ele = *ix;

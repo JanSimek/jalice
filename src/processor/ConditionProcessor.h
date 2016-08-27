@@ -28,7 +28,8 @@ class ConditionProcessor : public AimlProcessor
       return "";
     }
     string value = e->getAttribute("value", m, id);
-    velement li;
+
+    velement li, random;
     e->getChildren("li", &li);
     for (velement_it ix = li.begin(); ix != li.end(); ++ix)
     {
@@ -74,11 +75,35 @@ class ConditionProcessor : public AimlProcessor
           return Kernel::process(m, *ix, r, id);
         }
       }
+      // if there are one or more <li> without condition, choose a random one
       if (ct.empty() && v.empty() && bw.empty() && ew.empty())
       {
-        return Kernel::process(m, *ix, r, id);
+        // return Kernel::process(m, *ix, r, id);
+        random.push_back(*ix);
       }
     }
+
+    /*
+     * <condition name="age">
+     *     <li value="27">Most people die at 27, we just bury them at 72. Mark Twain said that.</li>
+     *     <li>Only <star/>? You are quite mature.</li>
+     *     <li>You are too old for me.</li>
+     *     <li>Can you explain how it feels to be <star/> years old?</li>
+     * </condition>
+     */
+    if (!random.empty())
+    {
+      // TODO: use RandomProcessor()
+      int chosen = rand() % random.size();
+
+      velement_it ix;
+      int i = 0;
+      for (ix = random.begin(); i < chosen; i++) ix++;
+      PElement ele = *ix;
+
+      return Kernel::process(m, ele, r, id);
+    }
+
     if (!cond.empty() && !value.empty())
     {
       string mem = Memory::getValue(cond, id);
