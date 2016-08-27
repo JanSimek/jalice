@@ -19,12 +19,13 @@ class GetProcessor : public AimlProcessor
   string getVersion() const { return "1.0"; }
   string process(Match *m, PElement e, Responder *r, const string &id)
   {
+    // FIXME: is conjunction even valid AIML or was it some experiment?
     string conjunction = e->getAttribute("conjunction", m, id);
     if (conjunction.empty())
     {
       conjunction = " and ";
     }
-    //    Ignore conjunction for time being
+    // Ignore conjunction for time being
     string result = Memory::getValue(toLower(e->getAttribute("name", m, id)), id);
     if (result.empty())
     {
