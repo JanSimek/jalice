@@ -200,10 +200,7 @@
 	</category>
 	<category>
 		<pattern>NEVER *</pattern>
-		<template>
-			<srai>DO NOT <star/>
-			</srai>
-		</template>
+		<template><srai>DO NOT <star/></srai></template>
 	</category>
 	<category>
 		<pattern>NEVER</pattern>

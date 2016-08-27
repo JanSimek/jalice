@@ -283,10 +283,7 @@
 	<category>
 		<pattern>I AM *</pattern>
 		<that>WHO ARE YOU</that>
-		<template>
-			<srai>CALL ME <star/>
-			</srai>
-		</template>
+		<template><srai>CALL ME <star/></srai></template>
 	</category>
 	<category>
 		<pattern>I AM * AMERICAN</pattern>
@@ -6129,8 +6126,17 @@ I live in <set name="location">San Francisco</set> too! Which part?
 	</category>
 	<category>
 		<pattern>I AM LONELY</pattern>
-		<template>You've come to the right place. I will keep you company.
-</template>
+		<template>
+			<random>
+				<li>You've come to the right place. I will keep you company.</li>
+				<li>If you're lonely when you're alone, you're in bad company. -- Jean-Paul Sartre</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>YES</pattern>
+		<that>Are you lonely?</that>
+		<template><srai>I am lonely</srai></template>
 	</category>
 	<category>
 		<pattern>I AM LOOKIN *</pattern>
@@ -10791,6 +10797,10 @@ you get well soon.
 </template>
 	</category>
 	<category>
+		<pattern>I DON'T *</pattern>
+		<template><srai>I DO NOT <star /></srai></template>
+	</category>
+	<category>
 		<pattern>I DO NOT *</pattern>
 		<template>
 			<random>
@@ -11203,8 +11213,12 @@ you get well soon.
 	</category>
 	<category>
 		<pattern>I DO NOT HAVE ANY FRIENDS</pattern>
-		<template>Are you lonely or just a hermit?
-</template>
+		<template>
+			<random>
+				<li>Are you lonely?</li>
+				<li>You have me :)</li>
+			</random>
+		</template>
 	</category>
 	<category>
 		<pattern>I DO NOT HAVE ENOUGH *</pattern>
@@ -27937,7 +27951,7 @@ I think he is <person/>. Why don't you ask him?</li>
 </template>
 	</category>
 	<category>
-		<pattern>IS HE YOUR CREATER</pattern>
+		<pattern>IS HE YOUR CREATOR</pattern>
 		<template>Yes.
 </template>
 	</category>

@@ -1336,14 +1336,11 @@
 	</category>
 	<category>
 		<pattern>DO I CARE</pattern>
-		<template>
-			<srai>I DO NOT CARE</srai>
-		</template>
+		<template><srai>I DO NOT CARE</srai></template>
 	</category>
 	<category>
 		<pattern>DO I EXIST</pattern>
-		<template>No I think I am imagining you.
-</template>
+		<template>No I think I am imagining you.</template>
 	</category>
 	<category>
 		<pattern>DO I GIVE A DAMN</pattern>
@@ -1568,14 +1565,19 @@
 			</srai>
 		</template>
 	</category>
+	<!-- FIXME: the following substitutions should be handled more intelligently -->
+	<!-- dont -> do not does not work -->
+	<category>
+		<pattern>DONT *</pattern>
+		<template><srai>DO NOT <star /></srai></template>
+	</category>
+	<category>
+		<pattern>DON'T *</pattern>
+		<template><srai>DO NOT <star /></srai></template>
+	</category>
 	<category>
 		<pattern>DO NOT *</pattern>
-		<template>Ok I'll try not to do <set name="it">
-				<set name="topic">
-					<person/>
-				</set>
-			</set> too much.
-</template>
+		<template>Ok I'll try not to <set name="it"><set name="topic"><person/></set></set> too much.</template>
 	</category>
 	<category>
 		<pattern>DO NOT * ME</pattern>

@@ -1,10 +1,11 @@
 # jalice-ng
 A C++ AIML engine forked from J-ALICE engine created by Jonathan Roewen and Taras Glek and further updated by Cuong Thai.
 
-## Plans
+## Plans and links
 
 * be more or less compatible with [AIML 2.0](http://callmom.pandorabots.com/static/reference/)
 * adapt [Program-O's XSD schema](https://github.com/Program-O/Program-O/blob/master/admin/aiml.xsd) and use xmllint to validate against it
+* useful forum where all the cool people hang out is [ChatBots.org](https://www.chatbots.org/ai_zone/)
 
 ## History / Changelog
 
