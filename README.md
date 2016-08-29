@@ -3,8 +3,11 @@ A C++ AIML engine forked from J-ALICE engine created by Jonathan Roewen and Tara
 
 ## Plans and links
 
+* [trim leading and trailing whitespace](http://stackoverflow.com/questions/25829143/c-trim-whitespace-from-a-string) from AIML elements. **NOTE:** Add 'if (first == string::npos) return "";' to avoid crashing
+* use proper [substitutions](http://alicebot.wikidot.com/aiml:pt-br:cybernet:cybora:substitutions-xml)
 * be more or less compatible with [AIML 2.0](http://callmom.pandorabots.com/static/reference/)
 * adapt [Program-O's XSD schema](https://github.com/Program-O/Program-O/blob/master/admin/aiml.xsd) and use xmllint to validate against it
+* add [Google test framework](https://github.com/google/googletest). Adapt [Program-O's test aiml](https://github.com/Program-O/Program-O/blob/master/library/reference/bot_test.aiml)
 * useful forum where all the cool people hang out is [ChatBots.org](https://www.chatbots.org/ai_zone/)
 
 ## History / Changelog

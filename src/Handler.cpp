@@ -21,7 +21,6 @@
 #include "processor/NormalizeProcessor.h"
 #include "processor/PersonProcessor.h"  //    + Person2 and Gender
 #include "processor/RandomProcessor.h"
-#include "processor/SecureProcessor.h"  //    Contains AuthenticateProcessor too
 #include "processor/SentenceProcessor.h"
 #include "processor/SetProcessor.h"
 #include "processor/SrProcessor.h"
@@ -62,8 +61,6 @@ void Handler::init()
   processors["topicstar"] = new TopicstarProcessor();
   processors["uppercase"] = new UppercaseProcessor();
   processors["template"] = new TemplateProcessor();
-  processors["secure"] = new SecureProcessor();
-  processors["authenticate"] = new AuthenticateProcessor();
 
   processors["person2"] = new Person2Processor();
   processors["gender"] = new GenderProcessor();

@@ -51,7 +51,6 @@ set(JALICE_SOURCES
     src/processor/NormalizeProcessor.h
     src/processor/PersonProcessor.h
     src/processor/RandomProcessor.h
-    src/processor/SecureProcessor.h
     src/processor/SentenceProcessor.h
     src/processor/SetProcessor.h
     src/processor/SrProcessor.h
@@ -71,3 +70,6 @@ target_link_libraries(${PROJECT_NAME}_console ${PROJECT_NAME})
 
 add_executable(${PROJECT_NAME}_xmpp clients/xmpp/main.cpp)
 target_link_libraries(${PROJECT_NAME}_xmpp ${PROJECT_NAME})
+
+file(COPY ${CMAKE_SOURCE_DIR}/startup.aiml
+     DESTINATION ${CMAKE_BINARY_DIR})

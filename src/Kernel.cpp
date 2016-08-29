@@ -198,7 +198,7 @@ Kernel::Kernel()
   new Substituter();
   Handler::init();
   Kernel::loadSubstitutions();
-  Kernel::load("std-startup.aiml");
+  Kernel::load("startup.aiml");
   Kernel::loadTemporaryData();
 }
 
