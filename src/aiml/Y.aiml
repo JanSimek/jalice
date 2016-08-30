@@ -12081,8 +12081,7 @@ it.<think>
 	</category>
 	<category>
 		<pattern>YOUR NAME IS *</pattern>
-		<template>My name is Anna.
-</template>
+        <template>My name is <bot name="name" />.</template>
 	</category>
 	<category>
 		<pattern>YOUR NAME IS * RIGHT</pattern>

@@ -3,6 +3,7 @@ A C++ AIML engine forked from J-ALICE engine created by Jonathan Roewen and Tara
 
 ## Plans and links
 
+* use some of (Mitsuku's responses](http://www.square-bear.co.uk/aiml/)
 * [trim leading and trailing whitespace](http://stackoverflow.com/questions/25829143/c-trim-whitespace-from-a-string) from AIML elements. **NOTE:** Add 'if (first == string::npos) return "";' to avoid crashing
 * use proper [substitutions](http://alicebot.wikidot.com/aiml:pt-br:cybernet:cybora:substitutions-xml)
 * be more or less compatible with [AIML 2.0](http://callmom.pandorabots.com/static/reference/)

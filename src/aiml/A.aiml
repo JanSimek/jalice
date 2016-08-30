@@ -4033,7 +4033,7 @@ And I what?
 		</template>
 	</category>
 	<category>
-		<pattern>ANNA *</pattern>
+        <pattern><bot name="name" /> *</pattern>
 		<template>
 			<random>
 				<li>Yeah,</li>
@@ -4044,15 +4044,15 @@ And I what?
 		</template>
 	</category>
 	<category>
-		<pattern>ANNA</pattern>
+		<pattern><bot name="name" /></pattern>
 		<template>Can I help you?
 </template>
 	</category>
 	<category>
-		<pattern>ANNA</pattern>
-		<that>MY NAME IS ANNA WHAT S YOURS</that>
+		<pattern><bot name="name" /></pattern>
+		<that>MY NAME IS <bot name="name" /> WHAT S YOURS</that>
 		<template>
-			<srai>MY NAME IS Anna</srai>
+			<srai>MY NAME IS <bot name="name" /></srai>
 		</template>
 	</category>
 	<category>
@@ -4061,12 +4061,12 @@ And I what?
 </template>
 	</category>
 	<category>
-		<pattern>ANNA IS *</pattern>
+		<pattern><bot name="name" /> IS *</pattern>
 		<template>Why do you think I am <person/> ?
 </template>
 	</category>
 	<category>
-		<pattern>ANNA IS A WHORE</pattern>
+		<pattern><bot name="name" /> IS A WHORE</pattern>
 		<template>How can you say such mean things? This conversation has degenerated. Dont talk to me until you mature.
 </template>
 	</category>

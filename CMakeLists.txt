@@ -71,5 +71,5 @@ target_link_libraries(${PROJECT_NAME}_console ${PROJECT_NAME})
 add_executable(${PROJECT_NAME}_xmpp clients/xmpp/main.cpp)
 target_link_libraries(${PROJECT_NAME}_xmpp ${PROJECT_NAME})
 
-file(COPY ${CMAKE_SOURCE_DIR}/startup.aiml
-     DESTINATION ${CMAKE_BINARY_DIR})
+execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_SOURCE_DIR}/startup.aiml ${CMAKE_BINARY_DIR}/startup.aiml)
+execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_SOURCE_DIR}/src/aiml ${CMAKE_BINARY_DIR}/aiml)
